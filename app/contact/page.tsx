@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "Contact | Lotus Health",
-  description: "Contact Lotus Health for questions about treatment in China.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact Lotus Health",
+  description:
+    "Contact Lotus Health with questions about healthcare, language support, and treatment options in China.",
+  path: "/contact",
+});
 
 /**
  * Renders the standalone Contact page with a direct email link.

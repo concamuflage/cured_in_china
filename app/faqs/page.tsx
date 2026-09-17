@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "FAQs | Lotus Health",
+export const metadata: Metadata = createPageMetadata({
+  title: "FAQs",
   description:
-    "Common questions about Lotus Health, medical travel coordination, costs, language support, and treatment planning.",
-};
+    "Questions and answers about Lotus Health and exploring treatment options in China.",
+  path: "/faqs",
+  index: false,
+});
 
 /**
  * Renders the standalone FAQs page without placeholder questions.

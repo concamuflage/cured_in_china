@@ -31,12 +31,16 @@ export const blogPosts = [
         alt: "Reddit comment describing a fast blood test, ultrasound, and CT scan experience in Guangzhou",
         caption:
           "I was in Guangzhou, China in December 2025. Did a full blood test, ultrasound and CT scan without prior appointment. Everything was completed in just under two hours. Results were sent to my phone within the next hour. Went back in May for holidays, stopped by the hospital for another blood test just to see if my readings got better. In and out of the hospital under an hour. FYI, I am currently living in Vancouver, Canada. I would have to wait months to get a CT scan.",
+        width: 1480,
+        height: 374,
       },
       {
         src: "/blog-images/ivf-china-experience.png",
         alt: "Reddit comment describing a family's IVF experience in China",
         caption:
           "My son and daughter in-law went through the IVF process there. It was a fraction of the cost it would have been in the states, and very successful - I am now the grandmother of twin girls, born yesterday!",
+        width: 1570,
+        height: 262,
       },
     ],
     body: [],

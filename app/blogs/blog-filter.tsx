@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
 type BlogPost = {
@@ -11,6 +12,8 @@ type BlogPost = {
     src: string;
     alt: string;
     caption: string;
+    width: number;
+    height: number;
   }[];
   sourceLabel?: string;
   sourceUrl?: string;
@@ -75,9 +78,9 @@ export function BlogFilter({ posts }: BlogFilterProps) {
             key={post.title}
           >
             <summary className="cursor-pointer list-none">
-              <span className="block text-xl font-bold leading-7 text-[#251a35]">
+              <h2 className="block text-xl font-bold leading-7 text-[#251a35]">
                 {post.title}
-              </span>
+              </h2>
               {post.excerpt ? (
                 <span className="mt-4 block text-sm leading-6 text-[#625371]">
                   {post.excerpt}
@@ -90,10 +93,13 @@ export function BlogFilter({ posts }: BlogFilterProps) {
                   className="rounded-[8px] border border-[#e8def8] bg-white p-3"
                   key={image.src}
                 >
-                  <img
+                  <Image
                     alt={image.alt}
                     className="w-full rounded-[8px] border border-[#efe7f8]"
+                    height={image.height}
+                    sizes="(min-width: 1024px) 816px, calc(100vw - 64px)"
                     src={image.src}
+                    width={image.width}
                   />
                   <figcaption className="mt-3 text-sm leading-6 text-[#625371]">
                     {image.caption}

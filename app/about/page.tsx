@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { AboutContent } from "../about-content";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Lotus Health",
+export const metadata: Metadata = createPageMetadata({
+  title: "About Us",
   description:
     "Learn why Lotus Health helps Americans overcome language barriers and compare affordable treatment options in China.",
-};
+  path: "/about",
+  canonicalPath: "/",
+});
 
 /**
  * Renders the standalone About Us page.

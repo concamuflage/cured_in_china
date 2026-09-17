@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const navItems = [
   { href: "/about", label: "About Us" },
   { href: "/blogs", label: "Blogs" },
@@ -40,14 +42,14 @@ export function SiteHeader() {
         aria-label="Primary"
         className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3"
       >
-        <a className="min-w-0" href="/">
+        <Link className="min-w-0" href="/">
           <BrandLogo />
-        </a>
+        </Link>
         <div className="hidden items-center gap-7 text-sm font-medium text-[#5d4d70] lg:flex">
           {navItems.map((item) => (
-            <a href={item.href} key={item.href}>
+            <Link href={item.href} key={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
