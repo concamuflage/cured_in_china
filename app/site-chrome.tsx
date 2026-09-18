@@ -37,10 +37,10 @@ export function BrandLogo() {
  */
 export function SiteHeader() {
   return (
-    <header className="border-b border-[#eee8f5] bg-white">
+    <header className="relative z-40 border-b border-[#eee8f5] bg-white">
       <nav
         aria-label="Primary"
-        className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3"
+        className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-5"
       >
         <Link className="min-w-0" href="/">
           <BrandLogo />
@@ -52,6 +52,30 @@ export function SiteHeader() {
             </Link>
           ))}
         </div>
+        <details className="mobile-nav lg:hidden">
+          <summary
+            aria-label="Open navigation menu"
+            className="flex h-11 w-11 cursor-pointer list-none items-center justify-center text-[#4f2478]"
+          >
+            <span className="sr-only">Open navigation menu</span>
+            <span className="mobile-nav__icon" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+          </summary>
+          <div className="absolute right-4 top-[calc(100%+1px)] w-[min(260px,calc(100vw-2rem))] border border-[#e8def8] bg-white p-2 shadow-[0_14px_35px_rgba(37,26,53,0.14)] sm:right-5">
+            {navItems.map((item) => (
+              <Link
+                className="block px-4 py-3 text-base font-semibold text-[#4f2478] hover:bg-[#f5f0fb] hover:text-[#251a35]"
+                href={item.href}
+                key={item.href}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </details>
       </nav>
     </header>
   );

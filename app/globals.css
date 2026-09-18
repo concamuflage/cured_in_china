@@ -27,9 +27,40 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+summary:focus-visible {
   outline: 3px solid #9ddfd3;
   outline-offset: 3px;
+}
+
+.mobile-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav__icon {
+  display: grid;
+  gap: 5px;
+  width: 24px;
+}
+
+.mobile-nav__icon span {
+  background: currentColor;
+  display: block;
+  height: 2px;
+  transition: opacity 160ms ease, transform 160ms ease;
+  width: 24px;
+}
+
+.mobile-nav[open] .mobile-nav__icon span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-nav[open] .mobile-nav__icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav[open] .mobile-nav__icon span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Native details elements keep blog articles collapsed without extra script. */
@@ -64,4 +95,24 @@ button:focus-visible {
   background-size: 268px 179px;
   height: 25px;
   width: 176px;
+}
+
+@media (max-width: 480px) {
+  .brand-logo {
+    gap: 8px;
+  }
+
+  .brand-logo__art--lotus {
+    background-position: -23px -10px;
+    background-size: 114px 76px;
+    height: 44px;
+    width: 68px;
+  }
+
+  .brand-logo__art--wordmark {
+    background-position: -34px -100px;
+    background-size: 201px 134px;
+    height: 19px;
+    width: 132px;
+  }
 }
