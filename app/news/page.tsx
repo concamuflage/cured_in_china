@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { createPageMetadata } from "../seo";
 import { cancerTreatmentNews } from "./news-data";
 
@@ -28,7 +27,8 @@ export default function NewsPage() {
             Healthcare news and updates
           </h1>
           <div className="mt-8 border-t border-[#d9caec]">
-            <Link
+            {/* Use a full page load because vinext RSC prefetch fails in production. */}
+            <a
               className="block border-b border-[#d9caec] py-6 text-[#4f2478] transition-colors hover:text-[#251a35] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6c3a99]"
               href={`/news/${cancerTreatmentNews.slug}`}
             >
@@ -38,7 +38,7 @@ export default function NewsPage() {
               <p className="mt-2 text-base leading-7 text-[#4b3f5a]">
                 {cancerTreatmentNews.subtitle}
               </p>
-            </Link>
+            </a>
             <a
               className="block border-b border-[#d9caec] py-6 text-xl font-semibold leading-8 text-[#4f2478] transition-colors hover:text-[#251a35] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6c3a99]"
               href="https://www.youtube.com/watch?v=7xURh6Z0HvM"

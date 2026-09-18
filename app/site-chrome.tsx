@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- Native anchors prevent the confirmed vinext production prefetch crash. */
 
 const navItems = [
   { href: "/about", label: "About Us" },
@@ -42,14 +42,15 @@ export function SiteHeader() {
         aria-label="Primary"
         className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-5"
       >
-        <Link className="min-w-0" href="/">
+        {/* Native anchors avoid vinext's production RSC prefetch failure. */}
+        <a className="min-w-0" href="/">
           <BrandLogo />
-        </Link>
+        </a>
         <div className="hidden items-center gap-7 text-sm font-medium text-[#5d4d70] lg:flex">
           {navItems.map((item) => (
-            <Link href={item.href} key={item.href}>
+            <a href={item.href} key={item.href}>
               {item.label}
-            </Link>
+            </a>
           ))}
         </div>
         <details className="mobile-nav lg:hidden">
@@ -66,13 +67,13 @@ export function SiteHeader() {
           </summary>
           <div className="absolute right-4 top-[calc(100%+1px)] w-[min(260px,calc(100vw-2rem))] border border-[#e8def8] bg-white p-2 shadow-[0_14px_35px_rgba(37,26,53,0.14)] sm:right-5">
             {navItems.map((item) => (
-              <Link
+              <a
                 className="block px-4 py-3 text-base font-semibold text-[#4f2478] hover:bg-[#f5f0fb] hover:text-[#251a35]"
                 href={item.href}
                 key={item.href}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </div>
         </details>
