@@ -1,3 +1,31 @@
+export type BlogPost = {
+  slug: string;
+  category: string;
+  topic: string;
+  title: string;
+  excerpt: string;
+  images?: {
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+  }[];
+  sourceLabel?: string;
+  sourceUrl?: string;
+  body: string[];
+  comparison?: {
+    intro: string;
+    sections: {
+      title: string;
+      china: string[];
+      unitedStates: string[];
+    }[];
+    note: string;
+    conclusion: string;
+  };
+};
+
 export const treatmentSteps = [
   {
     title: "Share your case",
@@ -16,8 +44,9 @@ export const treatmentSteps = [
   },
 ];
 
-export const blogPosts = [
+export const blogPosts: BlogPost[] = [
   {
+    slug: "patient-experiences-medical-trips-to-china",
     category: "Patient Experiences",
     topic: "Patient Experiences",
     title: "How Are People's Experiences With Medical Trips to China?",
@@ -46,6 +75,7 @@ export const blogPosts = [
     body: [],
   },
   {
+    slug: "overcome-language-barrier-in-china",
     category: "Language Support",
     topic: "Language Support",
     title: "How to Overcome the Language Barrier in China",
@@ -58,33 +88,67 @@ export const blogPosts = [
     ],
   },
   {
+    slug: "american-chinese-healthcare-differences",
     category: "Healthcare Comparison",
     topic: "Healthcare Comparison",
     title: "4 Key Differences Between American and Chinese Healthcare",
     excerpt:
       "A clear comparison of how patients pay, access doctors, understand doctor training, and receive bedside care in the U.S. and China.",
-    body: [
-      "The U.S. and China both have advanced hospitals and highly trained doctors, but the patient experience can be quite different.",
-      "1. Prepayment vs. Post-Payment",
-      "In China, hospitals commonly require payment for consultations, tests, medications, or deposits before non-emergency services are provided.",
-      "In the U.S., insured patients often receive treatment first, while the hospital bills the insurance company afterward. Patients may receive additional bills later.",
-      "China: More payment before or during treatment. U.S.: More billing after treatment.",
-      "2. Walk-In vs. Appointment",
-      "In China, patients can often register directly with a specialist and may be able to see a doctor the same day.",
-      "In the U.S., healthcare is more appointment-based. Patients often see a primary care doctor first and may need a referral to see a specialist.",
-      "China: Easier direct access to specialists. U.S.: More appointments and referrals.",
-      "3. Doctor Training",
-      "American doctors typically complete around 11-15 years of education and training after high school: four years of college, four years of medical school, and three to seven years of residency.",
-      "In China, students can enter medical school directly after high school. A common pathway includes a five-year medical degree followed by standardized residency training, although longer programs are also common.",
-      "4. Bedside Care During Hospitalization",
-      "In U.S. hospitals, nurses and other hospital staff generally provide much of the routine bedside care patients need during an inpatient stay.",
-      "In China, family members often play a larger role in caring for hospitalized patients. Depending on the hospital and the patient's condition, families may also hire a paid hospital caregiver to stay with the patient, help with eating, getting to the bathroom, moving around, or providing overnight assistance.",
-      "China: Family members or paid caregivers may provide more daily personal care. U.S.: More of this care is typically provided by hospital staff.",
-      "Practices vary by hospital, ward, and level of care in both countries.",
-      "For patients, four noticeable differences are how they pay, how they access doctors, how doctors are trained, and who provides day-to-day care during hospitalization.",
-    ],
+    body: [],
+    comparison: {
+      intro:
+        "The U.S. and China both have advanced hospitals and highly trained doctors, but the patient experience can be quite different.",
+      sections: [
+        {
+          title: "1. Payment timing",
+          china: [
+            "Hospitals commonly require payment for consultations, tests, medications, or a deposit before non-emergency services are provided.",
+            "Patients generally pay more before or during treatment.",
+          ],
+          unitedStates: [
+            "Insured patients often receive treatment first while the hospital bills the insurance company afterward.",
+            "Patients may receive additional bills after treatment.",
+          ],
+        },
+        {
+          title: "2. Access to doctors",
+          china: [
+            "Patients usually do not need to consult a primary care doctor before seeing a specialist. They can make an appointment directly with the specialist they need.",
+            "Walk-in visits are available for many specialties, although patients may wait several hours depending on the specialist's schedule and how busy the hospital is. The consultation itself often lasts about 5 to 10 minutes.",
+          ],
+          unitedStates: [
+            "Healthcare is more appointment-based. Patients often see a primary care doctor first and may need a referral for specialist care.",
+            "Appointments and referrals are more common.",
+          ],
+        },
+        {
+          title: "3. Doctor training",
+          china: [
+            "Students can enter medical school directly after high school. A common pathway includes a five-year medical degree followed by standardized residency training, although longer programs also exist.",
+          ],
+          unitedStates: [
+            "Doctors typically complete about 11 to 15 years of education and training after high school: four years of college, four years of medical school, and three to seven years of residency.",
+          ],
+        },
+        {
+          title: "4. Bedside care during hospitalization",
+          china: [
+            "Family members often play a larger role in caring for hospitalized patients.",
+            "Depending on the hospital and the patient's condition, families may hire a caregiver to help with meals, mobility, bathroom visits, and overnight assistance.",
+          ],
+          unitedStates: [
+            "Nurses and other hospital staff generally provide more of the routine bedside and personal care patients need during an inpatient stay.",
+          ],
+        },
+      ],
+      note:
+        "Practices vary by hospital, ward, insurance arrangement, and level of care in both countries.",
+      conclusion:
+        "For patients, four noticeable differences are when they pay, how they access doctors, how doctors are trained, and who provides day-to-day care during hospitalization.",
+    },
   },
   {
+    slug: "public-private-international-hospitals-china",
     category: "China Healthcare System",
     topic: "China Healthcare System",
     title: "Public, Private, and International Hospitals",

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { LinkedInLink } from "../linkedin-link";
 import { createPageMetadata } from "../seo";
+import { EmailReveal } from "./email-reveal";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Contact Lotus Health",
@@ -9,10 +11,10 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 /**
- * Renders the standalone Contact page with a direct email link.
+ * Renders the standalone Contact page with an email reveal control.
  *
- * Example: selecting `lotus.health@outlook.com` opens the visitor's email app
- * with the Lotus Health address already filled in.
+ * Example: selecting `Reveal email` displays the address and a link that opens
+ * the visitor's email application.
  */
 export default function ContactPage() {
   return (
@@ -27,14 +29,12 @@ export default function ContactPage() {
           </h1>
           <p className="mt-6 text-lg leading-8 text-[#4b3f5a]">
             For questions about healthcare and treatment options in China,
-            email us at:
+            reveal our email address to get in touch.
           </p>
-          <a
-            className="mt-5 inline-block text-xl font-semibold text-[#4f2478] underline decoration-[#bca7d4] underline-offset-4 transition-colors hover:text-[#251a35] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6c3a99]"
-            href="mailto:lotus.health@outlook.com"
-          >
-            lotus.health@outlook.com
-          </a>
+          <EmailReveal />
+          <div className="mt-5">
+            <LinkedInLink />
+          </div>
         </div>
       </section>
     </main>

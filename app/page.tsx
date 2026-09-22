@@ -19,7 +19,6 @@ const homeStructuredData = {
       name: "Lotus Health",
       url: siteUrl.toString(),
       logo: new URL("/lotus-health-logo.png", siteUrl).toString(),
-      email: "lotus.health@outlook.com",
       slogan: brandTagline,
     },
     {

@@ -13,8 +13,8 @@ export const metadata: Metadata = createPageMetadata({
 /**
  * Renders the standalone Blogs page.
  *
- * Example: `/blogs` uses the topic rail to filter the visible collapsed blog
- * cards, such as showing only `Healthcare Comparison` posts.
+ * Example: `/blogs` uses the topic rail to filter linked blog cards, such as
+ * showing only `Healthcare Comparison` posts.
  */
 export default function BlogsPage() {
   return (

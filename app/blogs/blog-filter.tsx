@@ -1,34 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
-
-type BlogPost = {
-  category: string;
-  topic: string;
-  title: string;
-  excerpt: string;
-  images?: {
-    src: string;
-    alt: string;
-    caption: string;
-    width: number;
-    height: number;
-  }[];
-  sourceLabel?: string;
-  sourceUrl?: string;
-  body: string[];
-};
+import type { BlogPost } from "../site-data";
 
 type BlogFilterProps = {
   posts: BlogPost[];
 };
 
 /**
- * Renders filterable blog topic navigation with collapsed article cards.
+ * Renders filterable blog topic navigation with links to article pages.
  *
  * Example: clicking `Patient Experiences` hides unrelated posts and shows the
- * article with Reddit screenshots and a source link.
+ * card linking to `/blogs/patient-experiences-medical-trips-to-china`.
  */
 export function BlogFilter({ posts }: BlogFilterProps) {
   const allTopicsLabel = "All Topics";
@@ -73,53 +56,24 @@ export function BlogFilter({ posts }: BlogFilterProps) {
 
       <div className="space-y-5">
         {visiblePosts.map((post) => (
-          <details
-            className="blog-accordion rounded-[8px] border border-[#e8def8] bg-white p-5"
-            key={post.title}
+          <article
+            className="rounded-[8px] border border-[#e8def8] bg-white p-5"
+            key={post.slug}
           >
-            <summary className="cursor-pointer list-none">
-              <h2 className="block text-xl font-bold leading-7 text-[#251a35]">
+            <h2 className="text-xl font-bold leading-7 text-[#251a35]">
+              <a
+                className="hover:text-[#5b2c83] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6c3a99]"
+                href={`/blogs/${post.slug}`}
+              >
                 {post.title}
-              </h2>
-              {post.excerpt ? (
-                <span className="mt-4 block text-sm leading-6 text-[#625371]">
-                  {post.excerpt}
-                </span>
-              ) : null}
-            </summary>
-            <div className="mt-5 space-y-4 border-t border-[#e8def8] pt-5">
-              {post.images?.map((image) => (
-                <figure
-                  className="rounded-[8px] border border-[#e8def8] bg-white p-3"
-                  key={image.src}
-                >
-                  <Image
-                    alt={image.alt}
-                    className="w-full rounded-[8px] border border-[#efe7f8]"
-                    height={image.height}
-                    sizes="(min-width: 1024px) 816px, calc(100vw - 64px)"
-                    src={image.src}
-                    width={image.width}
-                  />
-                  <figcaption className="mt-3 text-sm leading-6 text-[#625371]">
-                    {image.caption}
-                  </figcaption>
-                </figure>
-              ))}
-              {post.body.map((paragraph) => (
-                <p className="text-sm leading-7 text-[#5d4d70]" key={paragraph}>
-                  {paragraph}
-                </p>
-              ))}
-              {post.sourceUrl ? (
-                <p className="pt-2 text-sm font-semibold">
-                  <a className="text-[#5b2c83] underline" href={post.sourceUrl}>
-                    Source: {post.sourceLabel ?? post.sourceUrl}
-                  </a>
-                </p>
-              ) : null}
-            </div>
-          </details>
+              </a>
+            </h2>
+            {post.excerpt ? (
+              <p className="mt-4 text-sm leading-6 text-[#625371]">
+                {post.excerpt}
+              </p>
+            ) : null}
+          </article>
         ))}
       </div>
     </div>

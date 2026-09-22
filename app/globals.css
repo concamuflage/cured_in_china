@@ -84,17 +84,19 @@ summary:focus-visible {
 }
 
 .brand-logo__art--lotus {
-  background-position: -31px -13px;
+  /* Extra crop padding keeps the outer petals visible at every breakpoint. */
+  background-position: -29px -11px;
   background-size: 152px 101px;
-  height: 58px;
-  width: 90px;
+  height: 62px;
+  width: 94px;
 }
 
 .brand-logo__art--wordmark {
   background-position: -45px -133px;
   background-size: 268px 179px;
   height: 25px;
-  width: 176px;
+  /* Preserve the full final `h` instead of clipping its rightmost stroke. */
+  width: 180px;
 }
 
 @media (max-width: 480px) {
@@ -103,16 +105,16 @@ summary:focus-visible {
   }
 
   .brand-logo__art--lotus {
-    background-position: -23px -10px;
+    background-position: -21px -8px;
     background-size: 114px 76px;
-    height: 44px;
-    width: 68px;
+    height: 47px;
+    width: 72px;
   }
 
   .brand-logo__art--wordmark {
     background-position: -34px -100px;
     background-size: 201px 134px;
     height: 19px;
-    width: 132px;
+    width: 135px;
   }
 }

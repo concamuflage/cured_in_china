@@ -2,6 +2,7 @@
 
 const navItems = [
   { href: "/about", label: "About Us" },
+  { href: "/services", label: "Services" },
   { href: "/blogs", label: "Blogs" },
   { href: "/news", label: "News" },
   { href: "/faqs", label: "FAQs" },
@@ -33,7 +34,7 @@ export function BrandLogo() {
  * Renders the shared site header and primary navigation.
  *
  * Example: the brand lockup displays `Lotus Health` beside links to About Us,
- * Blogs, News, FAQs, and Contact.
+ * Services, Blogs, News, FAQs, and Contact.
  */
 export function SiteHeader() {
   return (

@@ -1,3 +1,5 @@
+import { LinkedInLink } from "./linkedin-link";
+
 /**
  * Renders the shared About Us story used on both the home page and `/about`.
  *
@@ -42,6 +44,9 @@ export function AboutContent() {
             Health can help you overcome the language barrier, understand your
             options, and find more affordable treatment in China.
           </p>
+          <div className="pt-2">
+            <LinkedInLink />
+          </div>
         </div>
       </div>
     </section>
