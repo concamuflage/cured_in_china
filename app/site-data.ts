@@ -13,6 +13,10 @@ export type BlogPost = {
   }[];
   sourceLabel?: string;
   sourceUrl?: string;
+  sources?: {
+    label: string;
+    url: string;
+  }[];
   body: string[];
   comparison?: {
     intro: string;
@@ -20,6 +24,18 @@ export type BlogPost = {
       title: string;
       china: string[];
       unitedStates: string[];
+    }[];
+    note: string;
+    conclusion: string;
+  };
+  priceComparison?: {
+    intro: string;
+    rows: {
+      treatment: string;
+      chinaPrice: string;
+      chinaDetail: string;
+      usaPrice: string;
+      usaDetail: string;
     }[];
     note: string;
     conclusion: string;
@@ -45,6 +61,70 @@ export const treatmentSteps = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "dental-care-costs-us-china",
+    category: "Prices",
+    topic: "Prices",
+    title: "Dental Care Costs in the United States and China",
+    excerpt:
+      "A side-by-side look at 2025 U.S. dental fee averages and published 2026 prices from a private dental clinic in Beijing.",
+    body: [],
+    priceComparison: {
+      intro:
+        "Published prices show a substantial difference across several common dental treatments.",
+      rows: [
+        {
+          treatment: "Routine adult cleaning",
+          chinaPrice: "About $14",
+          chinaDetail: "Published Beijing clinic price",
+          usaPrice: "$111 average",
+          usaDetail: "Survey range: $61-$135",
+        },
+        {
+          treatment: "One-surface composite filling",
+          chinaPrice: "About $70-$191",
+          chinaDetail: "Price varies by tooth and complexity",
+          usaPrice: "$200-$217 average",
+          usaDetail: "Anterior to posterior tooth",
+        },
+        {
+          treatment: "Root canal treatment",
+          chinaPrice: "About $130-$398",
+          chinaDetail: "Published treatment range",
+          usaPrice: "$894-$1,234 average",
+          usaDetail: "Anterior tooth to molar",
+        },
+        {
+          treatment: "Porcelain or all-ceramic crown",
+          chinaPrice: "About $400 or $685",
+          chinaDetail: "Depends on the crown option",
+          usaPrice: "$1,400 average",
+          usaDetail: "Survey range: $897-$1,975",
+        },
+        {
+          treatment: "Dental implant",
+          chinaPrice: "About $572-$1,789",
+          chinaDetail: "Listed as all-inclusive; varies by brand",
+          usaPrice: "About $4,744 combined",
+          usaDetail: "Average placement, custom abutment, and crown fees combined",
+        },
+      ],
+      note:
+        "U.S. figures are 2025 averages reported by dental practices participating in a professional fee survey. The U.S. implant figure combines the survey averages for surgical placement ($2,220), a custom abutment ($955), and an abutment-supported crown ($1,569). China figures are 2026 estimates published by one private Beijing clinic, not a national average. These are not guaranteed quotes. Insurance, examinations, imaging, sedation, extraction, bone grafting, travel, accommodation, follow-up care, and complications can change the total cost.",
+      conclusion:
+        "Before choosing care, request a written treatment plan and confirm exactly what the quoted price includes.",
+    },
+    sources: [
+      {
+        label: "2025 Dental Fees, Woody & Associates and Academy of Dental CPAs",
+        url: "https://woodycpas.com/wp-content/uploads/2025/07/2025-Dental-Survey-Statistics.pdf",
+      },
+      {
+        label: "2026 Dental Price List, Beijing Keer Dental Clinic",
+        url: "https://www.dentalbeijing.com/prices/",
+      },
+    ],
+  },
   {
     slug: "patient-experiences-medical-trips-to-china",
     category: "Patient Experiences",

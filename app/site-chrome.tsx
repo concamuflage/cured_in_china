@@ -3,6 +3,8 @@
 const navItems = [
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
+  { href: "/resources", label: "Resources" },
+  { href: "/hospitals", label: "Hospitals" },
   { href: "/blogs", label: "Blogs" },
   { href: "/news", label: "News" },
   { href: "/faqs", label: "FAQs" },
@@ -34,7 +36,7 @@ export function BrandLogo() {
  * Renders the shared site header and primary navigation.
  *
  * Example: the brand lockup displays `Lotus Health` beside links to About Us,
- * Services, Blogs, News, FAQs, and Contact.
+ * Services, Resources, Hospitals, Blogs, News, FAQs, and Contact.
  */
 export function SiteHeader() {
   return (
@@ -47,7 +49,7 @@ export function SiteHeader() {
         <a className="min-w-0" href="/">
           <BrandLogo />
         </a>
-        <div className="hidden items-center gap-7 text-sm font-medium text-[#5d4d70] lg:flex">
+        <div className="hidden items-center gap-5 text-sm font-medium text-[#5d4d70] lg:flex">
           {navItems.map((item) => (
             <a href={item.href} key={item.href}>
               {item.label}

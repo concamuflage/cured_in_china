@@ -11,6 +11,7 @@ type BlogPostPageProps = {
 };
 
 type Comparison = NonNullable<BlogPost["comparison"]>;
+type PriceComparison = NonNullable<BlogPost["priceComparison"]>;
 
 /**
  * Renders China and United States healthcare details in parallel sections.
@@ -67,6 +68,82 @@ function HealthcareComparison({ comparison }: { comparison: Comparison }) {
 }
 
 /**
+ * Renders treatment prices in a three-column China and U.S. comparison table.
+ *
+ * Example: the `Routine adult cleaning` row highlights `About $14` beside the
+ * `$111 average` U.S. fee.
+ */
+function DentalPriceComparison({
+  comparison,
+}: {
+  comparison: PriceComparison;
+}) {
+  return (
+    <div className="space-y-5">
+      <p className="text-base leading-7 text-[#4b3f5a]">{comparison.intro}</p>
+      <div className="overflow-hidden rounded-[8px] border border-[#d9caec]">
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[760px] border-collapse text-left">
+            <thead className="bg-[#5b2c83] text-white">
+              <tr>
+                <th className="w-[30%] px-5 py-4 text-sm font-bold" scope="col">
+                  Treatment
+                </th>
+                <th className="w-[35%] px-5 py-4 text-sm font-bold" scope="col">
+                  China
+                </th>
+                <th className="w-[35%] px-5 py-4 text-sm font-bold" scope="col">
+                  USA
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#e8def8] bg-white">
+              {comparison.rows.map((row) => (
+                <tr key={row.treatment}>
+                  <th
+                    className="px-5 py-5 align-top text-base font-bold text-[#251a35]"
+                    scope="row"
+                  >
+                    {row.treatment}
+                  </th>
+                  <td className="bg-[#fbf9ff] px-5 py-5 align-top">
+                    <strong className="block text-xl font-bold leading-7 text-[#4f2478]">
+                      {row.chinaPrice}
+                    </strong>
+                    <span className="mt-1 block text-xs leading-5 text-[#756780]">
+                      {row.chinaDetail}
+                    </span>
+                  </td>
+                  <td className="px-5 py-5 align-top">
+                    <strong className="block text-xl font-bold leading-7 text-[#4f2478]">
+                      {row.usaPrice}
+                    </strong>
+                    <span className="mt-1 block text-xs leading-5 text-[#756780]">
+                      {row.usaDetail}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <details className="border-t border-[#e8def8] bg-[#fbf9ff] px-5 py-4">
+          <summary className="cursor-pointer text-sm font-semibold text-[#5d4d70]">
+            About these prices
+          </summary>
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-[#625371]">
+            {comparison.note}
+          </p>
+        </details>
+      </div>
+      <p className="text-sm leading-6 text-[#625371]">
+        {comparison.conclusion}
+      </p>
+    </div>
+  );
+}
+
+/**
  * Returns every blog slug for static generation.
  *
  * Example: the language article produces `{ slug: "overcome-language-barrier-in-china" }`.
@@ -116,7 +193,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <main className="flex-1 bg-white text-[#251a35]">
       <article
         className={
-          post.comparison
+          post.comparison || post.priceComparison
             ? "mx-auto w-full max-w-5xl px-5 py-16"
             : "mx-auto w-full max-w-3xl px-5 py-16"
         }
@@ -142,6 +219,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="mt-10 space-y-6 border-t border-[#d9caec] pt-10">
           {post.comparison ? (
             <HealthcareComparison comparison={post.comparison} />
+          ) : null}
+          {post.priceComparison ? (
+            <DentalPriceComparison comparison={post.priceComparison} />
           ) : null}
           {post.images?.map((image) => (
             <figure
@@ -177,6 +257,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Source: {post.sourceLabel ?? post.sourceUrl}
               </a>
             </p>
+          ) : null}
+          {post.sources?.length ? (
+            <section className="pt-2">
+              <h2 className="text-lg font-bold text-[#251a35]">Sources</h2>
+              <ul className="mt-3 space-y-2">
+                {post.sources.map((source) => (
+                  <li className="text-sm font-semibold" key={source.url}>
+                    <a
+                      className="text-[#5b2c83] underline decoration-[#bca7d4] underline-offset-4"
+                      href={source.url}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {source.label}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
           ) : null}
         </div>
       </article>
