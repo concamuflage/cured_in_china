@@ -12,8 +12,8 @@ export const metadata: Metadata = createPageMetadata({
 /**
  * Renders the hospital specialty ranking directory and source information.
  *
- * Example: `/hospitals` opens with Pathology and lets visitors select any of
- * the 45 translated specialties from the left navigation.
+ * Example: `/hospitals` opens the `Ranking by Speciality` section and lets
+ * visitors select any of the 45 translated specialties from its icon grid.
  */
 export default function HospitalsPage() {
   return (

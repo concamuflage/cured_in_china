@@ -19,7 +19,7 @@ export default function FaqsPage() {
   return (
     <main className="flex-1 bg-white text-[#251a35]">
       <section className="mx-auto max-w-6xl px-5 py-16">
-        <div className="mb-8 max-w-3xl">
+        <div className="mb-8 w-full">
           <p className="text-sm font-bold uppercase tracking-normal text-[#6c3a99]">
             FAQs
           </p>

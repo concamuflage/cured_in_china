@@ -44,6 +44,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Advertise the canonical ARD manifest without claiming an API or agent. */}
+        <link href="/.well-known/ard.json" rel="ard" type="application/json" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col bg-[#f5f0fb] text-[#251a35] antialiased`}
       >

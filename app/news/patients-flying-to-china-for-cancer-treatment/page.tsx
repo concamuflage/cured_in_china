@@ -17,7 +17,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function CancerTreatmentNewsPage() {
   return (
     <main className="flex flex-1 flex-col bg-white text-[#251a35]">
-      <article className="mx-auto w-full max-w-3xl flex-1 px-5 py-16">
+      <article className="mx-auto w-full max-w-6xl flex-1 px-5 py-16">
         {/* Native navigation remains reliable when vinext RSC prefetch is unavailable. */}
         <a
           className="text-sm font-semibold text-[#6c3a99] underline decoration-[#bca7d4] underline-offset-4"

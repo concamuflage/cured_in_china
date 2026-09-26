@@ -18,6 +18,16 @@ export type BlogPost = {
     url: string;
   }[];
   body: string[];
+  sections?: {
+    title: string;
+    paragraphs?: string[];
+    items?: {
+      title: string;
+      description: string;
+      linkLabel?: string;
+      url?: string;
+    }[];
+  }[];
   comparison?: {
     intro: string;
     sections: {
@@ -25,8 +35,8 @@ export type BlogPost = {
       china: string[];
       unitedStates: string[];
     }[];
-    note: string;
-    conclusion: string;
+    note?: string;
+    conclusion?: string;
   };
   priceComparison?: {
     intro: string;
@@ -61,6 +71,122 @@ export const treatmentSteps = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "knee-replacement-cost-china-us",
+    category: "Prices",
+    topic: "Prices",
+    title: "Knee Replacement Cost in China and the United States",
+    excerpt:
+      "A focused comparison of published total knee replacement prices in China and the United States.",
+    body: [],
+    priceComparison: {
+      intro:
+        "China Hospitals Guide publishes reference ranges for total knee replacement, partial knee replacement, and knee resurfacing that are substantially lower than the U.S. ranges shown by the same source.",
+      rows: [
+        {
+          treatment: "Total knee replacement",
+          chinaPrice: "$8,000-$12,000",
+          chinaDetail:
+            "Published reference range; the hospital provides the final quote after reviewing the case",
+          usaPrice: "$35,000-$50,000",
+          usaDetail:
+            "U.S. comparison range published by the same source; actual prices vary by hospital and insurance",
+        },
+        {
+          treatment: "Partial knee replacement",
+          chinaPrice: "$5,000-$7,000",
+          chinaDetail:
+            "Only the damaged compartment of the knee is replaced",
+          usaPrice: "$20,000-$30,000",
+          usaDetail: "U.S. comparison range published by the same source",
+        },
+        {
+          treatment: "Knee resurfacing",
+          chinaPrice: "$6,000-$9,000",
+          chinaDetail:
+            "A bone-preserving option that may suit some younger, active patients",
+          usaPrice: "$25,000-$35,000",
+          usaDetail: "U.S. comparison range published by the same source",
+        },
+      ],
+      note:
+        "These figures come from one independent medical-tourism coordination website. They are not official national averages or guaranteed hospital quotes. The source identifies the hospital and implant brand as major cost factors. Before comparing offers, confirm whether each written estimate includes the implant, surgeon, anesthesia, hospital stay, preoperative testing, medication, rehabilitation, and follow-up care. Travel, accommodation, complications, and care after returning home may be additional costs.",
+      conclusion:
+        "Using the midpoint of each published range, the difference is about $32,500 for total knee replacement, $19,000 for partial knee replacement, and $22,500 for knee resurfacing. A meaningful comparison still requires written quotes that include the same services and implant specifications.",
+    },
+    sources: [
+      {
+        label: "China Hospitals Guide: Knee Replacement Treatment in China",
+        url: "https://chinahospitalsguide.com/conditions/knee-replacement/",
+      },
+      {
+        label: "China Hospitals Guide: Knee Replacement in China 2026",
+        url: "https://chinahospitalsguide.com/blog/knee-replacement-cost-china/",
+      },
+    ],
+  },
+  {
+    slug: "physical-checkup-in-china",
+    category: "China Healthcare System",
+    topic: "China Healthcare System",
+    title: "Getting a Physical Checkup in China",
+    excerpt:
+      "How checkup packages work, where to compare major providers, and how to use AI to translate package items before booking.",
+    body: [],
+    sections: [
+      {
+        title: "How checkup packages work",
+        paragraphs: [
+          "Private checkup chains and hospital health management centers in China commonly sell physical examinations as packages. A package may combine basic measurements, blood and urine tests, an electrocardiogram, ultrasound, X-ray or CT imaging, and a review of the results. The exact items, price, and availability can vary by city and branch.",
+          "A longer test list is not automatically a better choice. Age, sex, medical history, symptoms, previous screening, medications, and exposure to radiation can all affect which tests are appropriate. Before paying, ask a qualified clinician to review the package against your individual needs.",
+        ],
+      },
+      {
+        title: "Major checkup institutions and package pages",
+        paragraphs: [
+          "The providers below are examples for comparison, not endorsements by Lotus Health. Confirm the branch, current package contents, eligibility, price, language support, and appointment requirements directly with the institution before booking.",
+        ],
+        items: [
+          {
+            title: "iKang Guobin Healthcare Group (爱康国宾)",
+            description:
+              "A large private health-check network with an official online mall. Package descriptions are mainly in Chinese and availability depends on the selected city and branch.",
+            linkLabel: "Browse iKang checkup packages",
+            url: "https://mall.ikang.com/",
+          },
+          {
+            title: "Meinian Health (美年大健康)",
+            description:
+              "A nationwide health-check network. Its verified official store lists general, age-focused, and specialty screening packages for participating locations.",
+            linkLabel: "Browse Meinian Health checkup packages",
+            url: "https://detail.youzan.com/show/goods/newest?kdt_id=40115878",
+          },
+          {
+            title: "Ciming Health Checkup (慈铭体检)",
+            description:
+              "A health-check network with packages for younger adults, working professionals, women, parents, and older adults. Its official package page is in Chinese.",
+            linkLabel: "Browse Ciming checkup packages",
+            url: "https://www.ciming.com/online/1509898429933326336.html",
+          },
+        ],
+      },
+      {
+        title: "How to choose a package",
+        items: [
+          {
+            title: "Option 1: Ask Lotus Health for assistance",
+            description:
+              "Lotus Health can help you compare available packages and choose one based on your specific requirements, preferred location, and budget.",
+          },
+          {
+            title: "Option 2: Use AI assistance",
+            description:
+              "Give an AI agent the links to the available package pages and describe your specific needs, preferred location, and budget. Ask the agent to review the included items, compare the packages, and identify the option that best matches your requirements. A useful prompt is: “Review the checkup packages at these links, compare what each package includes, and recommend the most appropriate option based on my requirements.”",
+          },
+        ],
+      },
+    ],
+  },
   {
     slug: "dental-care-costs-us-china",
     category: "Prices",
@@ -173,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     topic: "Healthcare Comparison",
     title: "4 Key Differences Between American and Chinese Healthcare",
     excerpt:
-      "A clear comparison of how patients pay, access doctors, understand doctor training, and receive bedside care in the U.S. and China.",
+      "A side-by-side look at payment timing, specialist access, medical training, and bedside care in China and the United States.",
     body: [],
     comparison: {
       intro:
@@ -221,10 +347,6 @@ export const blogPosts: BlogPost[] = [
           ],
         },
       ],
-      note:
-        "Practices vary by hospital, ward, insurance arrangement, and level of care in both countries.",
-      conclusion:
-        "For patients, four noticeable differences are when they pay, how they access doctors, how doctors are trained, and who provides day-to-day care during hospitalization.",
     },
   },
   {

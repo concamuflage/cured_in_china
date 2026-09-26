@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <main className="flex flex-1 flex-col bg-white text-[#251a35]">
       <section className="mx-auto flex w-full max-w-6xl flex-1 px-5 py-16">
-        <div className="max-w-3xl">
+        <div className="w-full">
           <p className="text-sm font-bold uppercase tracking-normal text-[#6c3a99]">
             Contact
           </p>

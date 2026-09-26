@@ -14,55 +14,72 @@ type Comparison = NonNullable<BlogPost["comparison"]>;
 type PriceComparison = NonNullable<BlogPost["priceComparison"]>;
 
 /**
- * Renders China and United States healthcare details in parallel sections.
+ * Renders China and United States healthcare details in a comparison table.
  *
- * Example: `Payment timing` places China's prepayment model beside the U.S.
- * insurance billing model on desktop and stacks the columns on small screens.
+ * Example: the `Payment timing` row places China's prepayment model beside
+ * America's insurance billing model under fixed country columns.
  */
 function HealthcareComparison({ comparison }: { comparison: Comparison }) {
   return (
     <div className="space-y-6">
       <p className="text-[17px] leading-8 text-[#352c40]">{comparison.intro}</p>
-      {comparison.sections.map((section) => (
-        <section
-          className="overflow-hidden rounded-[8px] border border-[#d9caec]"
-          key={section.title}
-        >
-          <h2 className="bg-[#f5f0fb] px-5 py-4 text-xl font-bold text-[#251a35]">
-            {section.title}
-          </h2>
-          <div className="grid md:grid-cols-2">
-            <div className="px-5 py-5">
-              <h3 className="text-sm font-bold uppercase tracking-normal text-[#6c3a99]">
-                China
-              </h3>
-              <div className="mt-3 space-y-3">
-                {section.china.map((paragraph) => (
-                  <p className="text-base leading-7 text-[#352c40]" key={paragraph}>
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
-            <div className="border-t border-[#e8def8] px-5 py-5 md:border-l md:border-t-0">
-              <h3 className="text-sm font-bold uppercase tracking-normal text-[#6c3a99]">
-                United States
-              </h3>
-              <div className="mt-3 space-y-3">
-                {section.unitedStates.map((paragraph) => (
-                  <p className="text-base leading-7 text-[#352c40]" key={paragraph}>
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-      <p className="text-sm leading-7 text-[#625371]">{comparison.note}</p>
-      <p className="text-[17px] font-semibold leading-8 text-[#251a35]">
-        {comparison.conclusion}
-      </p>
+      <div className="overflow-hidden rounded-[8px] border border-[#d9caec]">
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[820px] border-collapse text-left">
+            <thead className="bg-[#5b2c83] text-white">
+              <tr>
+                <th className="w-[22%] px-5 py-4 text-sm font-bold" scope="col">
+                  Aspects
+                </th>
+                <th className="w-[39%] px-5 py-4 text-sm font-bold" scope="col">
+                  China
+                </th>
+                <th className="w-[39%] px-5 py-4 text-sm font-bold" scope="col">
+                  America
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#e8def8] bg-white">
+              {comparison.sections.map((section) => (
+                <tr key={section.title}>
+                  <th
+                    className="bg-[#fbf9ff] px-5 py-5 align-top text-base font-bold text-[#251a35]"
+                    scope="row"
+                  >
+                    {section.title}
+                  </th>
+                  <td className="px-5 py-5 align-top">
+                    <div className="space-y-3">
+                      {section.china.map((paragraph) => (
+                        <p className="text-base leading-7 text-[#352c40]" key={paragraph}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </td>
+                  <td className="border-l border-[#e8def8] px-5 py-5 align-top">
+                    <div className="space-y-3">
+                      {section.unitedStates.map((paragraph) => (
+                        <p className="text-base leading-7 text-[#352c40]" key={paragraph}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {comparison.note ? (
+        <p className="text-sm leading-7 text-[#625371]">{comparison.note}</p>
+      ) : null}
+      {comparison.conclusion ? (
+        <p className="text-[17px] font-semibold leading-8 text-[#251a35]">
+          {comparison.conclusion}
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -70,10 +87,10 @@ function HealthcareComparison({ comparison }: { comparison: Comparison }) {
 /**
  * Renders treatment prices in a three-column China and U.S. comparison table.
  *
- * Example: the `Routine adult cleaning` row highlights `About $14` beside the
- * `$111 average` U.S. fee.
+ * Example: a knee replacement row highlights `$8,000-$12,000` beside the
+ * `$35,000-$50,000` U.S. reference range.
  */
-function DentalPriceComparison({
+function PriceComparisonTable({
   comparison,
 }: {
   comparison: PriceComparison;
@@ -192,11 +209,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <main className="flex-1 bg-white text-[#251a35]">
       <article
-        className={
-          post.comparison || post.priceComparison
-            ? "mx-auto w-full max-w-5xl px-5 py-16"
-            : "mx-auto w-full max-w-3xl px-5 py-16"
-        }
+        className="mx-auto w-full max-w-6xl px-5 py-16"
       >
         <a
           className="text-sm font-semibold text-[#6c3a99] underline decoration-[#bca7d4] underline-offset-4"
@@ -221,7 +234,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <HealthcareComparison comparison={post.comparison} />
           ) : null}
           {post.priceComparison ? (
-            <DentalPriceComparison comparison={post.priceComparison} />
+            <PriceComparisonTable comparison={post.priceComparison} />
           ) : null}
           {post.images?.map((image) => (
             <figure
@@ -245,6 +258,43 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <p className="text-[17px] leading-8 text-[#352c40]" key={paragraph}>
               {paragraph}
             </p>
+          ))}
+          {post.sections?.map((section) => (
+            <section className="space-y-4" key={section.title}>
+              <h2 className="text-2xl font-bold leading-8 text-[#251a35]">
+                {section.title}
+              </h2>
+              {section.paragraphs?.map((paragraph) => (
+                <p className="text-[17px] leading-8 text-[#352c40]" key={paragraph}>
+                  {paragraph}
+                </p>
+              ))}
+              {section.items?.length ? (
+                <ul className="divide-y divide-[#e8def8] border-y border-[#d9caec]">
+                  {section.items.map((item) => (
+                    <li className="py-5" key={item.title}>
+                      <h3 className="text-lg font-bold text-[#251a35]">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-base leading-7 text-[#4b3f5a]">
+                        {item.description}
+                      </p>
+                      {item.url && item.linkLabel ? (
+                        <a
+                          className="mt-3 inline-block font-semibold text-[#5b2c83] underline decoration-[#bca7d4] underline-offset-4"
+                          href={item.url}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          {item.linkLabel}
+                          <span className="sr-only"> (opens in a new tab)</span>
+                        </a>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </section>
           ))}
           {post.sourceUrl ? (
             <p className="pt-2 text-sm font-semibold">
