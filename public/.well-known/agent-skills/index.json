@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "lotus-health-research",
+      "type": "skill-md",
+      "description": "Research Lotus Health services and public information about healthcare planning in China. Use for service, hospital-ranking, cost, visa, medical-travel, and language-support questions; do not use for diagnosis, emergency care, or autonomous booking.",
+      "url": "/.well-known/agent-skills/lotus-health-research/SKILL.md",
+      "digest": "sha256:40d4a2209e627b86c4256ccd890096593d30a4c5af1e0e76786bdb0a9b7667fe"
+    }
+  ]
+}

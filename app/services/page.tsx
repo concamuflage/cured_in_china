@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { createPageMetadata } from "../seo";
+import { createPageMetadata, siteUrl } from "../seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Healthcare Support Services in China",
@@ -35,6 +35,91 @@ const services = [
   },
 ];
 
+const servicesStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Lotus Health services",
+  url: new URL("/services", siteUrl).toString(),
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "Service",
+        name: services[0].name,
+        description: services[0].description,
+        provider: { "@id": `${siteUrl}#organization` },
+        areaServed: { "@type": "Country", name: "China" },
+        offers: {
+          "@type": "Offer",
+          price: 0,
+          priceCurrency: "USD",
+        },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "Service",
+        name: services[1].name,
+        description: services[1].description,
+        provider: { "@id": `${siteUrl}#organization` },
+        areaServed: { "@type": "Country", name: "China" },
+        offers: {
+          "@type": "Offer",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: 20,
+            priceCurrency: "USD",
+            unitText: "appointment",
+          },
+        },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      item: {
+        "@type": "Service",
+        name: services[2].name,
+        description: services[2].description,
+        provider: { "@id": `${siteUrl}#organization` },
+        areaServed: { "@type": "Country", name: "China" },
+        offers: {
+          "@type": "Offer",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: 30,
+            priceCurrency: "USD",
+            unitText: "hour",
+          },
+        },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      item: {
+        "@type": "Service",
+        name: services[3].name,
+        description: services[3].description,
+        provider: { "@id": `${siteUrl}#organization` },
+        areaServed: { "@type": "Country", name: "China" },
+        offers: {
+          "@type": "Offer",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: 150,
+            priceCurrency: "USD",
+            unitText: "24 hours",
+          },
+        },
+      },
+    },
+  ],
+};
+
 /**
  * Renders the service and pricing table for Lotus Health support in China.
  *
@@ -44,6 +129,12 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="flex flex-1 flex-col bg-white text-[#251a35]">
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(servicesStructuredData).replace(/</g, "\\u003c"),
+        }}
+        type="application/ld+json"
+      />
       <section className="mx-auto w-full max-w-6xl flex-1 px-5 py-16">
         <div className="w-full">
           <p className="text-sm font-bold uppercase tracking-normal text-[#6c3a99]">

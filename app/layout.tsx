@@ -45,8 +45,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Advertise the canonical ARD manifest without claiming an API or agent. */}
+        {/* Advertise machine-readable guidance without claiming a transactional API. */}
         <link href="/.well-known/ard.json" rel="ard" type="application/json" />
+        <link href="/llms.txt" rel="describedby" type="text/markdown" />
+        <link
+          href="/.well-known/agent-skills/index.json"
+          rel="alternate"
+          title="Lotus Health agent skills"
+          type="application/json"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col bg-[#f5f0fb] text-[#251a35] antialiased`}

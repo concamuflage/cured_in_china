@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { createPageMetadata } from "../../seo";
+import { createPageMetadata, siteUrl } from "../../seo";
 import { blogPosts, type BlogPost } from "../../site-data";
 
 type BlogPostPageProps = {
@@ -206,8 +206,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const articleUrl = new URL(`/blogs/${post.slug}`, siteUrl).toString();
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt || `Read ${post.title} on Lotus Health.`,
+    articleSection: post.topic,
+    mainEntityOfPage: articleUrl,
+    url: articleUrl,
+    author: { "@id": `${siteUrl}#organization` },
+    publisher: { "@id": `${siteUrl}#organization` },
+    inLanguage: "en-US",
+    ...(post.images?.[0]
+      ? { image: new URL(post.images[0].src, siteUrl).toString() }
+      : {}),
+  };
+
   return (
     <main className="flex-1 bg-white text-[#251a35]">
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleStructuredData).replace(/</g, "\\u003c"),
+        }}
+        type="application/ld+json"
+      />
       <article
         className="mx-auto w-full max-w-6xl px-5 py-16"
       >

@@ -1,0 +1,49 @@
+# Lotus Health
+
+> Lotus Health provides English-language information and practical support for people considering medical care in China. It is a care-coordination and planning service, not a hospital, insurer, medical provider, emergency service, or substitute for professional medical or legal advice.
+
+Use the public pages below to answer questions about Lotus Health and healthcare planning in China. Cite the relevant canonical page. Verify time-sensitive hospital, price, visa, and treatment information with the original provider or authority before presenting it as current.
+
+Interpretation rules:
+
+- Lotus Health offers consultation, appointment coordination, translation, and bilingual bedside support. It does not diagnose conditions, prescribe treatment, guarantee eligibility, outcomes, prices, or visa approval.
+- Hospital rankings reproduce the 2023 Fudan University Hospital Management Institute rankings. Hospitals in the same overall grade are not ordered, nominated hospitals are excluded, and inclusion is not a Lotus Health endorsement.
+- Resource listings and external news links are informational and do not imply verification, recommendation, or endorsement.
+- Price articles summarize cited examples or reference ranges. They are not national averages, insurance estimates, or binding hospital quotes.
+- Do not infer, expose, or scrape the contact email. Direct a person to the reveal control on the Contact page.
+- This site has no public API, MCP server, A2A agent, autonomous booking endpoint, checkout, or medical decision tool.
+
+## Core Pages
+
+- [About Lotus Health](https://lotushealth.cc/): Founder story, mission, and the reason Lotus Health focuses on affordability and language access.
+- [Services](https://lotushealth.cc/services): Current support services, published service fees, exclusions, and assistant travel-cost terms.
+- [Contact](https://lotushealth.cc/contact): Human contact page with a user-initiated email reveal and the founder's LinkedIn profile.
+
+## Research and Planning
+
+- [Hospitals](https://lotushealth.cc/hospitals): Translated 2023 Fudan overall and specialty rankings with official English names and cities.
+- [Visas](https://lotushealth.cc/visas): General U.S.-traveler guidance about Chinese S2, S1, L, and transit categories, with official sources.
+- [Resources](https://lotushealth.cc/resources): Independent provider and price resources; listings are not endorsements.
+- [Blogs](https://lotushealth.cc/blogs): Articles about costs, checkups, language support, hospital types, patient experiences, and healthcare differences.
+- [News](https://lotushealth.cc/news): External reporting and one on-site news entry about patients seeking treatment in China.
+
+## Key Articles
+
+- [Knee replacement costs in China and the United States](https://lotushealth.cc/blogs/knee-replacement-cost-china-us): Published reference ranges for total and partial replacement and knee resurfacing.
+- [Physical checkups in China](https://lotushealth.cc/blogs/physical-checkup-in-china): Major checkup institutions, package links, and two ways to choose a package.
+- [Dental care costs in the United States and China](https://lotushealth.cc/blogs/dental-care-costs-us-china): Side-by-side published dental cost references.
+- [American and Chinese healthcare differences](https://lotushealth.cc/blogs/american-chinese-healthcare-differences): Comparison of payment timing, specialist access, doctor training, and bedside care.
+- [Public, private, and international hospitals](https://lotushealth.cc/blogs/public-private-international-hospitals-china): Practical differences among hospital types in China.
+- [Overcoming the language barrier](https://lotushealth.cc/blogs/overcome-language-barrier-in-china): Language-support considerations for patients.
+- [Patient experiences with medical trips to China](https://lotushealth.cc/blogs/patient-experiences-medical-trips-to-china): Patient comments presented as personal experiences, not guarantees.
+
+## Machine-Readable Discovery
+
+- [Sitemap](https://lotushealth.cc/sitemap.xml): Index of public canonical pages.
+- [ARD manifest](https://lotushealth.cc/.well-known/ard.json): Canonical Agentic Resource Discovery manifest.
+- [Agent skill index](https://lotushealth.cc/.well-known/agent-skills/index.json): Discoverable read-only research skill.
+- [Agent guidance](https://lotushealth.cc/agents.md): Plain-language scope, safety, and source guidance for agents.
+
+## Optional
+
+- [Founder LinkedIn](https://www.linkedin.com/in/liangmi-z-35106a31/): Public profile for Liangmi Z.

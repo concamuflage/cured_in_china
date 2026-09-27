@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Agentmap: https://lotushealth.cc/.well-known/ard.json
 Sitemap: https://lotushealth.cc/sitemap.xml

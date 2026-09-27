@@ -1,4 +1,5 @@
-const linkedinUrl = "https://www.linkedin.com/in/liangmi-z-35106a31/";
+export const founderLinkedInUrl =
+  "https://www.linkedin.com/in/liangmi-z-35106a31/";
 
 /**
  * Renders the founder's LinkedIn profile as an accessible icon link.
@@ -11,7 +12,7 @@ export function LinkedInLink() {
     <a
       aria-label="Visit Liangmi Z's LinkedIn profile"
       className="inline-flex h-11 w-11 items-center justify-center rounded-[6px] bg-[#5b2c83] text-white transition-colors hover:bg-[#4b217c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6c3a99]"
-      href={linkedinUrl}
+      href={founderLinkedInUrl}
       rel="noopener noreferrer"
       target="_blank"
       title="LinkedIn profile"

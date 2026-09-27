@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { AboutContent } from "./about-content";
+import { founderLinkedInUrl } from "./linkedin-link";
 import { brandTagline } from "./site-chrome";
-import { createPageMetadata, siteUrl } from "./seo";
+import { createPageMetadata, siteDescription, siteUrl } from "./seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Affordable Treatment in China",
@@ -19,13 +20,31 @@ const homeStructuredData = {
       name: "Lotus Health",
       url: siteUrl.toString(),
       logo: new URL("/lotus-health-logo.png", siteUrl).toString(),
+      description: siteDescription,
       slogan: brandTagline,
+      founder: {
+        "@type": "Person",
+        name: "Liangmi Z",
+        sameAs: [founderLinkedInUrl],
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "China",
+      },
+      knowsAbout: [
+        "Healthcare in China",
+        "Medical travel planning",
+        "Hospital appointment coordination",
+        "Medical translation",
+        "Bilingual bedside support",
+      ],
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}#website`,
       url: siteUrl.toString(),
       name: "Lotus Health",
+      description: siteDescription,
       publisher: { "@id": `${siteUrl}#organization` },
       inLanguage: "en-US",
     },
