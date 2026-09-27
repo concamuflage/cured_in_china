@@ -31,7 +31,12 @@ export function createPageMetadata({
 }: PageMetadataOptions): Metadata {
   const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
   const socialTitle = absoluteTitle ?? `${title} | ${siteName}`;
-  const socialImage = new URL("/og.png", siteUrl).toString();
+  // The versioned URL prevents social platforms from reusing the legacy
+  // CuredInChina preview after the image was rebranded to Lotus Health.
+  const socialImage = new URL(
+    "/og.png?v=lotus-health-2026",
+    siteUrl,
+  ).toString();
 
   return {
     title: absoluteTitle ? { absolute: absoluteTitle } : title,
