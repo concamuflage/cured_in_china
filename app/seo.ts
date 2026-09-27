@@ -31,10 +31,11 @@ export function createPageMetadata({
 }: PageMetadataOptions): Metadata {
   const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
   const socialTitle = absoluteTitle ?? `${title} | ${siteName}`;
-  // The versioned URL prevents social platforms from reusing the legacy
-  // CuredInChina preview after the image was rebranded to Lotus Health.
+  // A distinct pathname prevents social platforms from reusing the legacy
+  // CuredInChina preview. For example, crawlers now request
+  // `https://lotushealth.cc/lotus-health-open-graph.png` instead of `/og.png`.
   const socialImage = new URL(
-    "/og.png?v=lotus-health-2026",
+    "/lotus-health-open-graph.png",
     siteUrl,
   ).toString();
 
@@ -59,7 +60,14 @@ export function createPageMetadata({
       url: canonicalUrl,
       siteName,
       type: "website",
-      images: [{ url: socialImage, alt: "Lotus Health" }],
+      images: [
+        {
+          url: socialImage,
+          width: 1672,
+          height: 941,
+          alt: "Lotus Health",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
