@@ -297,9 +297,9 @@ export const blogPosts: BlogPost[] = [
     slug: "american-chinese-healthcare-differences",
     category: "Healthcare Comparison",
     topic: "Healthcare Comparison",
-    title: "4 Key Differences Between American and Chinese Healthcare",
+    title: "5 Key Differences Between American and Chinese Healthcare",
     excerpt:
-      "A side-by-side look at payment timing, specialist access, medical training, and bedside care in China and the United States.",
+      "A side-by-side look at payment timing, specialist access, medical training, bedside care, and hospital ownership in China and the United States.",
     body: [],
     comparison: {
       intro:
@@ -344,6 +344,15 @@ export const blogPosts: BlogPost[] = [
           ],
           unitedStates: [
             "Nurses and other hospital staff generally provide more of the routine bedside and personal care patients need during an inpatient stay.",
+          ],
+        },
+        {
+          title: "5. Ownership of leading hospitals",
+          china: [
+            "Many of China's highest-ranked hospitals are large public teaching hospitals affiliated with universities or government institutions.",
+          ],
+          unitedStates: [
+            "Many nationally recognized U.S. hospitals are private nonprofit academic medical centers, although leading public hospitals also exist.",
           ],
         },
       ],
