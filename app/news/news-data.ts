@@ -48,6 +48,28 @@ export const peopleCancerTreatmentNews: NewsArticle = {
   ],
 };
 
+export const yicaiMedicalTourismNews: NewsArticle = {
+  slug: "medical-tourism-china-robotic-surgery-specialist-expertise",
+  title:
+    "Medical Tourism to China Grows With Robotic Surgery and Specialist Expertise",
+  subtitle:
+    "Yicai reports that overseas patients are considering Chinese hospitals for advanced procedures, specialist care, and lower treatment costs.",
+  attribution:
+    "Original reporting by Qian Tongxin for Yicai, published January 27, 2026. This page is an independent summary.",
+  sourceLabel: "Read the original report in Yicai Global",
+  sourceUrl:
+    "https://www.yicaiglobal.com/news/chinas-medical-technology-on-par-with-developed-countries-attract-foreign-patients",
+  body: [
+    `Yicai reports that a growing number of overseas patients are learning about Chinese hospitals through social media, online research, remote consultations, and appointment services. According to the report, patients are being drawn not only by lower prices but also by specialized procedures and medical technology available at major hospitals.`,
+    `The report centers on a 10-year-old girl with a pancreatic tumor whose father is a Chinese doctor who had worked in Vancouver for 20 years. Her father told Yicai that specialists at several Canadian hospitals expected surgery to require removal of her spleen. The family instead traveled to Ruijin Hospital, affiliated with Shanghai Jiao Tong University School of Medicine, after learning that its surgeons could evaluate a less invasive robotic approach.`,
+    `Yicai reported that a Ruijin Hospital team led by Dr. Jin Jiabin used robotic laparoscopy to separate the pancreatic tumor from blood vessels serving the spleen and repair damaged vessels. According to the girl's father, the tumor was removed while preserving the spleen, and she recovered and was discharged. The reported cost was CNY160,000, or about $23,000 at the exchange rate cited by Yicai.`,
+    `Doctors interviewed by Yicai pointed to rapid development in Chinese medical devices and expertise in selected specialties. One physician at Shanghai Ninth People's Hospital cited congenital hand deformities, hemangiomas, and lymphedema as areas in which the hospital receives international patients. These statements reflect the views of the physicians interviewed and should not be read as independent rankings of hospitals or treatments.`,
+    `The report also notes that many leading Chinese hospitals have created international medical departments for overseas patients. These services can help with remote consultations and appointments, but capacity remains limited because international care requires both clinical expertise and staff with suitable language skills.`,
+    `Physicians interviewed by Yicai said hospitals must continue serving domestic patients while developing stronger systems and service guarantees for visitors from abroad. For prospective patients, the account highlights the importance of confirming a hospital's experience with the specific condition, obtaining an individualized medical review, and understanding costs, follow-up care, and language support before traveling.`,
+    `This is a summary of Yicai's reporting, including one family's account of treatment. It does not independently verify the outcome, establish that one healthcare system is superior, or provide medical advice. Treatment options and results depend on the individual patient, diagnosis, hospital, and clinical team.`,
+  ],
+};
+
 export const cancerTreatmentNews: NewsArticle = {
   slug: "patients-flying-to-china-for-cancer-treatment",
   title: "Patients Are Flying to China for the Latest Cancer Treatment",

@@ -3,6 +3,7 @@ import { createPageMetadata } from "../seo";
 import {
   cancerTreatmentNews,
   peopleCancerTreatmentNews,
+  yicaiMedicalTourismNews,
 } from "./news-data";
 
 export const metadata: Metadata = createPageMetadata({
@@ -56,6 +57,18 @@ export default function NewsPage() {
                 China is distinguishing itself from established medical-tourism
                 destinations through advanced procedures offered at lower costs.
                 Reported by The Japan Times.
+              </p>
+            </a>
+            {/* Use a full page load because vinext RSC prefetch fails in production. */}
+            <a
+              className="block border-b border-[#d9caec] py-6 text-[#4f2478] transition-colors hover:text-[#251a35] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6c3a99]"
+              href={`/news/${yicaiMedicalTourismNews.slug}`}
+            >
+              <h2 className="text-xl font-semibold leading-8">
+                {yicaiMedicalTourismNews.title}
+              </h2>
+              <p className="mt-2 text-base leading-7 text-[#4b3f5a]">
+                {yicaiMedicalTourismNews.subtitle}
               </p>
             </a>
             <a
