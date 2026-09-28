@@ -33,8 +33,8 @@ export function AboutContent() {
             the answer was no.
           </p>
           <p>
-            I believe the same question is worth asking in healthcare. A higher
-            price does not always mean care is one hundred times better.
+            I believe the same question is worth asking in healthcare. Higher
+            prices do not always mean proportionally better care.
             Healthcare should not feel out of reach because of cost, and
             language should not be the reason a patient cannot explore more
             affordable care.
