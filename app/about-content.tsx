@@ -34,10 +34,21 @@ export function AboutContent() {
           </p>
           <p>
             I believe the same question is worth asking in healthcare. Higher
-            prices do not always mean proportionally better care.
-            Healthcare should not feel out of reach because of cost, and
-            language should not be the reason a patient cannot explore more
-            affordable care.
+            prices do not always mean proportionally better care. Healthcare
+            should not feel out of reach because of cost, and language should
+            not be the reason a patient cannot explore more affordable care.
+          </p>
+          <p>
+            I experienced this firsthand while working in Uzbekistan, when a
+            fish bone became lodged in my throat during a hot pot meal. I first
+            went to an American hospital, where an X-ray confirmed the bone was
+            there, but the doctors did not have the equipment needed to remove
+            it. A kind local nurse then accompanied me to a public hospital in
+            Tashkent and translated for me. There, the doctor used an endoscopic
+            instrument fitted with a camera and forceps to locate and remove the
+            bone. The American hospital charged me $100, while the public
+            hospital charged me nothing. That experience reinforced my belief
+            that a higher price does not necessarily mean better treatment.
           </p>
           <p>
             If you are struggling to afford healthcare in the U.S., I hope Lotus
