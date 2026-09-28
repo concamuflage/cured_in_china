@@ -1,4 +1,54 @@
-export const cancerTreatmentNews = {
+export type NewsArticle = {
+  slug: string;
+  title: string;
+  subtitle: string;
+  attribution?: string;
+  sourceLabel: string;
+  sourceUrl: string;
+  body: string[];
+  references?: {
+    label: string;
+    url: string;
+  }[];
+};
+
+export const peopleCancerTreatmentNews: NewsArticle = {
+  slug: "california-couple-seeks-car-t-treatment-in-china",
+  title: "California Couple Travels to Shenzhen for CAR T-Cell Therapy",
+  subtitle:
+    "After recurrent esophageal cancer stopped responding to standard treatment, Larry and Jamie Black sought a CLDN18.2-targeted cellular therapy in China.",
+  attribution:
+    "Original reporting by Wendy Grossman Kantor for People, published September 22, 2026. This page is an independent summary.",
+  sourceLabel: "Read the original report in People",
+  sourceUrl:
+    "https://people.com/california-couple-travels-to-china-for-lifesaving-cancer-treatment-exclusive-12116104",
+  body: [
+    `Larry Black, 65, and his wife, Jamie, traveled from Los Angeles to Shenzhen in September 2026 to pursue satricabtagene autoleucel, or satri-cel, a CAR T-cell therapy that targets the protein CLDN18.2. People reported that Larry had recurrent esophageal cancer and that testing showed his tumor was CLDN18.2-positive.`,
+    `Larry was diagnosed with stage 3 esophageal cancer in March 2025 after an endoscopy. He received FLOT chemotherapy and underwent an esophagectomy that June, followed by additional chemotherapy. After about eight months with no evidence of disease, a March 2026 scan showed that the cancer had spread to his peritoneum. Jamie told People that subsequent chemotherapy was not working.`,
+    `CAR T-cell therapy uses a patient's own T cells. The cells are collected, genetically modified to recognize a target on cancer cells, expanded in a laboratory, and infused back into the patient. U.S. regulators have approved several CAR T-cell therapies for blood cancers, but no CAR T-cell therapy was FDA-approved for a solid tumor at the time of the report.`,
+    `The couple flew to Hong Kong on September 6 and continued to the University of Hong Kong-Shenzhen Hospital. According to People, they paid an initial installment of about $80,000 to a specialty pharmacy. Jamie estimated that treatment, hospital care, travel, accommodations, follow-up care, and possible additional infusions could bring the total cost close to $500,000.`,
+    `People reported that Larry's T cells were collected in Shenzhen and were expected to be modified and reinfused several weeks later. Jamie said her goal was not to assume a cure, but to seek more time and a better quality of life for her husband. The report did not include a treatment outcome because the infusion and follow-up had not yet occurred.`,
+    `Jamie also described the practical difficulty of arranging complex treatment in another country. She said an English-speaking medical liaison was important for navigating the technology, payment process, hospital procedures, and communication with the medical team.`,
+    `China's approval of satri-cel is narrower than the phrase "approved for solid tumors" may suggest. In June 2026, the National Medical Products Administration approved it for CLDN18.2-positive, HER2-negative advanced gastric or gastroesophageal-junction adenocarcinoma after failure of at least two prior lines of therapy. The People report identifies Larry's diagnosis as esophageal cancer, so readers should not infer that satri-cel is approved or appropriate for every esophageal cancer or solid tumor.`,
+    `CAR T-cell therapy can cause serious side effects, including infections, cytokine release syndrome, and neurological complications. Treatment eligibility and risks require assessment by qualified oncology and cellular-therapy specialists. This summary is general information, not medical advice or a treatment recommendation.`,
+  ],
+  references: [
+    {
+      label: "People: original report by Wendy Grossman Kantor",
+      url: "https://people.com/california-couple-travels-to-china-for-lifesaving-cancer-treatment-exclusive-12116104",
+    },
+    {
+      label: "National Cancer Institute: how CAR T-cell therapy works and its risks",
+      url: "https://www.cancer.gov/about-cancer/treatment/research/car-t-cells",
+    },
+    {
+      label: "Hong Kong Exchanges filing: the approved satri-cel indication in China",
+      url: "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=1000099082",
+    },
+  ],
+};
+
+export const cancerTreatmentNews: NewsArticle = {
   slug: "patients-flying-to-china-for-cancer-treatment",
   title: "Patients Are Flying to China for the Latest Cancer Treatment",
   subtitle:

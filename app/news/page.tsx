@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "../seo";
-import { cancerTreatmentNews } from "./news-data";
+import {
+  cancerTreatmentNews,
+  peopleCancerTreatmentNews,
+} from "./news-data";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Healthcare in China News",
@@ -10,10 +13,10 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 /**
- * Renders the standalone News page with links to relevant external reporting.
+ * Renders the News page with external reports and attributed on-site summaries.
  *
- * Example: selecting the RNZ cancer-treatment story opens the original RNZ
- * report, while the Wall Street Journal story opens its complete on-site entry.
+ * Example: selecting the People story opens an independent on-site summary,
+ * while selecting the RNZ story opens the original report.
  */
 export default function NewsPage() {
   return (
@@ -27,6 +30,18 @@ export default function NewsPage() {
             Healthcare news and updates
           </h1>
           <div className="mt-8 border-t border-[#d9caec]">
+            {/* Use a full page load because vinext RSC prefetch fails in production. */}
+            <a
+              className="block border-b border-[#d9caec] py-6 text-[#4f2478] transition-colors hover:text-[#251a35] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6c3a99]"
+              href={`/news/${peopleCancerTreatmentNews.slug}`}
+            >
+              <h2 className="text-xl font-semibold leading-8">
+                {peopleCancerTreatmentNews.title}
+              </h2>
+              <p className="mt-2 text-base leading-7 text-[#4b3f5a]">
+                {peopleCancerTreatmentNews.subtitle}
+              </p>
+            </a>
             <a
               className="block border-b border-[#d9caec] py-6 text-[#4f2478] transition-colors hover:text-[#251a35] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6c3a99]"
               href="https://www.japantimes.co.jp/news/2026/06/11/asia-pacific/china-medical-tourism-health/"
