@@ -51,9 +51,12 @@ export function AboutContent() {
             that a higher price does not necessarily mean better treatment.
           </p>
           <p>
-            If you are struggling to afford healthcare in the U.S., I hope Lotus
-            Health can help you overcome the language barrier, understand your
-            options, and find more affordable treatment in China.
+            If you cannot afford care in the U.S., are exploring more affordable
+            options, or are unsure where to seek treatment in China, Lotus
+            Health can help you navigate the next steps. We provide language
+            support and practical guidance to help you identify hospitals and
+            specialists relevant to the care you are seeking, with a particular
+            focus on China&apos;s more affordable public hospital system.
           </p>
           <div className="pt-2">
             <LinkedInLink />
