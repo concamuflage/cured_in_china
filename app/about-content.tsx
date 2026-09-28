@@ -34,9 +34,7 @@ export function AboutContent() {
           </p>
           <p>
             I believe the same question is worth asking in healthcare. Higher
-            prices do not always mean proportionally better care. Healthcare
-            should not feel out of reach because of cost, and language should
-            not be the reason a patient cannot explore more affordable care.
+            prices do not always mean proportionally better care.
           </p>
           <p>
             I experienced this firsthand while working in Uzbekistan, when a
