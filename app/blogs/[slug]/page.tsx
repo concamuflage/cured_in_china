@@ -22,7 +22,11 @@ type PriceComparison = NonNullable<BlogPost["priceComparison"]>;
 function HealthcareComparison({ comparison }: { comparison: Comparison }) {
   return (
     <div className="space-y-6">
-      <p className="text-[17px] leading-8 text-[#352c40]">{comparison.intro}</p>
+      {comparison.intro ? (
+        <p className="text-[17px] leading-8 text-[#352c40]">
+          {comparison.intro}
+        </p>
+      ) : null}
       <div className="overflow-hidden rounded-[8px] border border-[#d9caec]">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[820px] border-collapse text-left">

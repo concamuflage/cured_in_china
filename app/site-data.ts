@@ -29,7 +29,7 @@ export type BlogPost = {
     }[];
   }[];
   comparison?: {
-    intro: string;
+    intro?: string;
     sections: {
       title: string;
       china: string[];
@@ -302,8 +302,6 @@ export const blogPosts: BlogPost[] = [
       "A side-by-side look at payment timing, specialist access, medical training, bedside care, and hospital ownership in China and the United States.",
     body: [],
     comparison: {
-      intro:
-        "The U.S. and China both have advanced hospitals and highly trained doctors, but the patient experience can be quite different.",
       sections: [
         {
           title: "1. Payment timing",
