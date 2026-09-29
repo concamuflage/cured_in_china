@@ -72,6 +72,173 @@ export const treatmentSteps = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ivf-cost-china-us",
+    category: "Prices",
+    topic: "Prices",
+    title: "IVF Cost in China and the United States",
+    excerpt:
+      "A practical comparison of IVF prices in China and the United States, including common add-on costs and eligibility requirements.",
+    body: [],
+    priceComparison: {
+      intro:
+        "Published reference prices suggest that one fresh IVF cycle can cost substantially less in China, but the two ranges do not necessarily include exactly the same services. A written, itemized treatment plan is essential before comparing the totals.",
+      rows: [
+        {
+          treatment: "One fresh IVF cycle",
+          chinaPrice: "$5,500-$9,000",
+          chinaDetail:
+            "International-patient reference for standard stimulation, monitoring, egg retrieval, laboratory work, embryo transfer, and medication; excludes donor programs",
+          usaPrice: "$12,000-$25,000",
+          usaDetail:
+            "Published U.S. range per cycle; insurance coverage and included services vary",
+        },
+      ],
+      note:
+        "The China estimate is a June 2026 reference range for a fresh cycle through a tier-3 public hospital international department. It lists medication within the estimate but prices ICSI, preimplantation genetic testing, and a later frozen embryo transfer separately. The U.S. range was published by the White House in February 2025 and does not define one standard set of included services. Neither range is a guaranteed quote, and more than one cycle may be needed.",
+      conclusion:
+        "At the midpoint of these published ranges, the treatment-price difference is about $11,250 per cycle. That calculation excludes travel, accommodation, time away from work, repeat cycles, and any services omitted from either quote.",
+    },
+    sections: [
+      {
+        title: "What can change the IVF total?",
+        paragraphs: [
+          "The base cycle is only the starting point. Medication dosage, ICSI, embryo freezing, storage, preimplantation genetic testing, donor programs, and additional frozen embryo transfers can materially change the final bill. Initial fertility testing and anesthesia may also be billed separately, depending on the clinic.",
+          "Ask each clinic for the same line items: consultations and screening, stimulation medication, monitoring, egg retrieval and anesthesia, fertilization method, embryo culture, fresh or frozen transfer, freezing, storage, genetic testing, and follow-up. A low base price is not meaningful if necessary services appear later as add-ons.",
+        ],
+      },
+      {
+        title: "Eligibility in mainland China",
+        paragraphs: [
+          "Price is not the only threshold. Mainland China's assisted-reproduction rules treat IVF as a medical treatment for infertility, and official guidance requires a married couple to provide identification and a marriage certificate. Beijing's official English-language guidance says foreign couples should provide passports and a marriage certificate. Patients should confirm eligibility and document requirements with the receiving hospital before making travel arrangements.",
+        ],
+      },
+      {
+        title: "How to compare clinics",
+        items: [
+          {
+            title: "Request an individualized review",
+            description:
+              "A fertility specialist should review age, diagnosis, ovarian reserve, sperm factors, previous treatment, and relevant records before the clinic recommends a protocol or gives a meaningful estimate.",
+          },
+          {
+            title: "Ask for outcome data that matches your case",
+            description:
+              "Compare clinic-reported live-birth outcomes for patients in a similar age and diagnosis group, and ask whether the figure is per retrieval, per transfer, or cumulative. A pregnancy rate and a live-birth rate are not interchangeable.",
+          },
+          {
+            title: "Plan for the complete trip",
+            description:
+              "Confirm how many visits and days in China are expected, whether remote monitoring can be completed in the United States, what English-language support is available, and how frozen embryos and follow-up care will be handled.",
+          },
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Medical To China: China Medical Service Fee Reference",
+        url: "https://medicaltochina.com/pricing/services",
+      },
+      {
+        label: "White House: Expanding Access to In Vitro Fertilization",
+        url: "https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-j-trump-expands-access-to-in-vitro-fertilization-ivf/",
+      },
+      {
+        label: "China National Health Commission: ART document requirements",
+        url: "https://www.nhc.gov.cn/fys/c100077/201609/5945fc907caf482da9cbbaaf1252479f.shtml",
+      },
+      {
+        label: "Beijing Municipal Health Commission: Assisted Reproductive Technology",
+        url: "https://wjw.beijing.gov.cn/English/HealthServices/HealthIndications/201912/t20191216_1236422.html",
+      },
+    ],
+  },
+  {
+    slug: "hip-replacement-cost-china-us",
+    category: "Prices",
+    topic: "Prices",
+    title: "Hip Replacement Cost in China and the United States",
+    excerpt:
+      "A comparison of published hip replacement prices in China and the United States, with the questions patients should ask before comparing quotes.",
+    body: [],
+    priceComparison: {
+      intro:
+        "A published international-patient estimate for an uncomplicated, single-side hip replacement at a tier-3 public hospital in China is much lower than a U.S. commercial-insurance payment benchmark. The figures are useful starting points, not guaranteed patient bills.",
+      rows: [
+        {
+          treatment: "Primary single-side hip replacement",
+          chinaPrice: "$9,000-$14,000",
+          chinaDetail:
+            "International-department estimate with an imported implant and seven-night ward stay for an uncomplicated case",
+          usaPrice: "$34,396 average",
+          usaDetail:
+            "Published benchmark for an inpatient hip replacement paid by employer-sponsored insurance",
+        },
+      ],
+      note:
+        "The China range was reviewed in June 2026 and breaks the estimate into surgery and implant, ward stay, anesthesia, imaging, and laboratory testing. The U.S. figure is a Health Care Cost Institute benchmark for the total commercial payment, not a hospital's list charge or the patient's out-of-pocket responsibility. Insurance benefits, location, inpatient or outpatient care, implant choice, rehabilitation, and complications can all change the total.",
+      conclusion:
+        "The midpoint of the China range is $11,500, about $22,900 below the published U.S. commercial benchmark. Compare itemized quotes rather than treating that difference as a guaranteed saving.",
+    },
+    sections: [
+      {
+        title: "Why the China estimate can be lower",
+        paragraphs: [
+          "China's national volume-based procurement program has reduced the price of artificial joints used by participating hospitals. In 2024, the National Healthcare Security Administration reported that selected hip and knee products accounted for more than 90% of use after the first procurement round, and prices in the renewal round fell by about another 6% on average.",
+          "A lower implant price helps reduce the total, but the implant is only one part of the bill. Surgeon and facility fees, anesthesia, imaging, laboratory tests, hospital nights, medication, rehabilitation, and treatment for complications must also be considered.",
+        ],
+      },
+      {
+        title: "Make the quotes comparable",
+        items: [
+          {
+            title: "Confirm the implant",
+            description:
+              "Ask for the manufacturer, model, bearing material, fixation method, and whether every implant component is included. Domestic and imported implants can have different prices.",
+          },
+          {
+            title: "Confirm the hospital package",
+            description:
+              "Check whether the estimate includes the surgeon, assistant, anesthesia, operating room, imaging, laboratory work, medication, private or shared ward, expected length of stay, and routine follow-up.",
+          },
+          {
+            title: "Budget for recovery",
+            description:
+              "Ask how much physical therapy is included, where rehabilitation will take place, when the surgeon expects the patient to be fit to travel, and who will manage follow-up after the patient returns home.",
+          },
+          {
+            title: "Understand financial risk",
+            description:
+              "Request written estimates for extra hospital nights, intensive care, revision surgery, and treatment of complications. Travel, accommodation, a companion, and care in the United States after returning are usually separate expenses.",
+          },
+        ],
+      },
+      {
+        title: "Price should not choose the surgeon",
+        paragraphs: [
+          "Hip replacement is major surgery. The decision should consider the diagnosis, whether surgery is appropriate, the surgeon's experience with the proposed approach, the hospital's infection and complication controls, the rehabilitation plan, and continuity of care. A lower price can make treatment more accessible, but it does not by itself establish quality or suitability for an individual patient.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Medical To China: China Medical Service Fee Reference",
+        url: "https://medicaltochina.com/pricing/services",
+      },
+      {
+        label: "Health Care Cost Institute: Commercial and Medicare Price Benchmarks",
+        url: "https://healthcostinstitute.org/wp-content/uploads/images/pdfs/HCCImpact/HCCImpact_CommMedicare.pdf",
+      },
+      {
+        label: "China National Healthcare Security Administration: Artificial Joint Procurement",
+        url: "https://www.nhsa.gov.cn/art/2024/5/21/art_52_12760.html",
+      },
+      {
+        label: "CMS: Hospital Price Transparency",
+        url: "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency",
+      },
+    ],
+  },
+  {
     slug: "knee-replacement-cost-china-us",
     category: "Prices",
     topic: "Prices",
